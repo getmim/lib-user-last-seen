@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'lib-user-last-seen',
-    '__version' => '0.0.1',
+    '__version' => '0.1.0',
     '__git' => 'git@github.com:getmim/lib-user-last-seen.git',
     '__license' => 'MIT',
     '__author' => [
@@ -42,6 +42,16 @@ return [
     ],
     'libFormatter' => [
         'formats' => [
+            'user' => [
+                'seen' => [
+                    'type' => 'partial',
+                    'model' => [
+                        'name' => 'LibUserLastSeen\\Model\\UserLastSeen',
+                        'field' => 'user'
+                    ],
+                    'format' => 'user-last-seen'
+                ]
+            ],
             'user-last-seen' => [
                 'id' => [
                     'type' => 'number'
